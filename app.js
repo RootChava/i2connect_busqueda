@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const { serverconfig } = require("./config.js")
 const { todosClientes, validarTodosClientes } = require("./routes/cliente");
 
 Object.defineProperty(Array.prototype, 'flat', {
