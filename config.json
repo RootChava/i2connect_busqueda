@@ -1,0 +1,40 @@
+{
+  "defaultValues": {
+    "timeZoneId": "America/Mexico_City",
+    "entityTypeId": "TENT1",
+    "linkTypeId": "TENL1"
+  },
+  "services": [
+    {
+      "id": "buscarCliente",
+      "name": "Buscar Cliente",
+      "description": "Buscar cliente por termino, para pedir todos los clientes ingresar: *",
+      "acquireUrl": "/buscarCliente/acquire",
+      "validateUrl": "/buscarCliente/validate",
+      "clientConfigType": "FORM",
+      "clientConfigId": "exampleForm",
+      "resultItemTypeIds": [
+        "TENT1"
+      ]
+    }
+  ],
+  "clientConfigs": [
+    {
+      "id": "exampleForm",
+      "config": {
+        "sections": [
+          {
+            "conditions": [
+              {
+                "id": "term",
+                "label": "Termino a buscar",
+                "mandatory": true,
+                "logicalType": "SINGLE_LINE_STRING"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
